@@ -1,6 +1,6 @@
 {{ partial "default_head.html" . }}
 
-{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+{{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") }}
 
 <div class="posts">
   {{ range .Paginator.Pages }}
