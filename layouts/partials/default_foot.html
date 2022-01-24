@@ -3,6 +3,9 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-  {{ partial "custom_footer.html" . }}
+{{ partial "custom_footer.html" . }}
+{{ range .Site.Params.plugins_js }}
+  <script src="{{ . }}"></script>
+{{ end }}
   </body>
 </html>
