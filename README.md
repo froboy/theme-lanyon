@@ -38,6 +38,10 @@ You can use syntax highlighting, if you have [Pygments](http://pygments.org/). S
 pygmentize -f html -S colorful -a .highlight > static/css/syntax.css
 ```
 
+## Screenshot
+
+![Screenshot](images/screenshot.png)
+
 ## Contributing
 
 If you're interested in hacking on this theme, please check out [CONTRIBUTING](CONTRIBUTING.md).
