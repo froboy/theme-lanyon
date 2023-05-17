@@ -7,11 +7,10 @@
     <div class="post h-entry">
 {{ if .Title }}
         <h1 class="post-title p-name"><a href="{{ .Permalink }}" class="u-url">{{ .Title }}</a></h1>
-        <time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}
+        <time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</time>
 {{ else }}
-        <a href="{{ .Permalink }}" class="u-url"><time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</a>
+        <a href="{{ .Permalink }}" class="u-url"><time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</time></a>
 {{ end }}
-</time>
         <div class="e-content">{{ .Content }}</div>
     </div>
   {{ end }}
