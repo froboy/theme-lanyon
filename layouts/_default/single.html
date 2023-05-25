@@ -1,9 +1,9 @@
 {{ partial "default_head.html" . }}
 
 <div class="post h-entry">
-  <h1 class="post-title p-name">{{ .Title }}</h1>
-  <span class="post-date">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</span>
-  <span class="e-content">{{ .Content }}</span>
+  {{ if .Title }}<h1 class="post-title p-name">{{ .Title }}</h1>{{ end }}
+  <a href="{{ .Permalink }}" class="u-url"><time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</time></a>
+  <div class="e-content">{{ .Content }}</div>
 </div>
 
 {{ if .Site.Params.include_conversation }}

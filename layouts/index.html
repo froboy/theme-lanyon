@@ -2,17 +2,16 @@
 
 {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") }}
 
-<div class="posts">
+<div class="posts h-feed">
   {{ range .Paginator.Pages }}
-    <div class="post">
+    <div class="post h-entry">
 {{ if .Title }}
-        <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-        <span class="post-date">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}
+        <h1 class="post-title p-name"><a href="{{ .Permalink }}" class="u-url">{{ .Title }}</a></h1>
+        <time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</time>
 {{ else }}
-        <a href="{{ .Permalink }}"><span class="post-date">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</a>
+        <a href="{{ .Permalink }}" class="u-url"><time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</time></a>
 {{ end }}
-</span>
-        {{ .Content }}
+        <div class="e-content">{{ .Content }}</div>
     </div>
   {{ end }}
 </div>
@@ -32,4 +31,3 @@
 </div>
 
 {{ partial "default_foot.html" . }}
-
