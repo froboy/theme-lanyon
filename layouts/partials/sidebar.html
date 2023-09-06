@@ -11,7 +11,7 @@
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item {{ if .IsHome }} active {{ end }}" href="/">Home</a>
 
-    {{ $thisperma := .URL }}
+    {{ $thisperma := .RelPermalink }}
 	{{ range .Site.Menus.main }}
 		{{ if .Page.Params.redirect_url }}
         <a class="sidebar-nav-item {{ if eq .URL $thisperma }} active {{ end }}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>

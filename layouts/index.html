@@ -18,13 +18,13 @@
 
 <div class="pagination">
   {{ if $paginator.HasNext }}
-  <a class="pagination-item older" href="{{ $paginator.Next.URL }}">Older</a>
+  <a class="pagination-item older" href="{{ $paginator.Next.Permalink }}">Older</a>
   {{ else }}
   <span class="pagination-item older">Older</span>
   {{ end }}
 
   {{ if $paginator.HasPrev }}
-  <a class="pagination-item newer" href="{{ $paginator.Prev.URL }}">Newer</a>
+  <a class="pagination-item newer" href="{{ $paginator.Prev.Permalink }}">Newer</a>
   {{ else }}
   <span class="pagination-item newer">Newer</span>
   {{ end }}
